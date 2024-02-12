@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block body %}
+<h2>Agregar un disco a la base de datos: </h2>
+{% if miFormulario.errors %}
+    <p style="color: red">Los datos ingresados no son válidos</p>
+{% endif %}
+<form action="" method="post">
+    {% csrf_token %}
+    <!-- Aca esta la magia de Django-->
+    <table>
+        {{miFormulario.as_table}}
+    </table>
+    <input type="submit" value="Enviar">
+</form>
+{% endblock body %}
